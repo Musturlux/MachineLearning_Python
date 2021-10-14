@@ -53,7 +53,9 @@ print("-------------Normalisation--------------")
 np.random.seed(0)
 E = np.random.randint(0,100,[10,5])
 print(E)
+T = E
 E = E.astype(np.float64) #tip pour changer le type d'une matrice de int en float
+
 #si je reste en int j'ai pas le possibilite d'avoir des resultat preci
 print(type(E[0][0]))
 
@@ -74,3 +76,7 @@ for i in range(taille[1]):
         E[j,i] = (E[j,i] - moyenne[i]) / ecart[i]
 
 print(E)
+
+G = (T - T.mean(axis=0)) / T.std(axis=0) #Normalisation utilisation de matrice
+print("\n")
+print(G)
